@@ -1,0 +1,11 @@
+{
+  "id": "study-flow",
+  "name": "StudyFlow",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "A focused workspace for daily notes, courses, projects, tasks, and personal study.",
+  "author": "ZZERONEKO",
+  "authorUrl": "https://github.com/zzeroneko",
+  "fundingUrl": "https://github.com/sponsors/zzeroneko",
+  "isDesktopOnly": false
+}

@@ -1,0 +1,28 @@
+{
+  "name": "study-flow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node esbuild.config.mjs production",
+    "dev": "node esbuild.config.mjs",
+    "test": "node --experimental-strip-types --test test/*.test.mjs",
+    "bootstrap:android": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/bootstrap-android.ps1",
+    "test:desktop": "npm run build && vitest run --config vitest.config.ts --project integration-tests:desktop-cdp",
+    "test:android": "npm run build && vitest run --config vitest.config.ts --project integration-tests:android-appium",
+    "test:integration": "npm run build && vitest run --config vitest.config.ts",
+    "test:all": "npm test && npm run test:desktop && npm run test:android"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/ws": "^8.18.1",
+    "appium": "^3.5.2",
+    "appium-uiautomator2-driver": "^8.1.0",
+    "esbuild": "^0.25.0",
+    "obsidian": "^1.7.2",
+    "obsidian-integration-testing": "^5.6.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.10",
+    "ws": "^8.21.0"
+  }
+}

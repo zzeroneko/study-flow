@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 2,
+  "courseDraft": {
+    "semester": "2026-2",
+    "courseName": "",
+    "schedules": [
+      {
+        "day": "월",
+        "period": "1",
+        "location": "",
+        "online": false
+      }
+    ],
+    "step": 0
+  },
+  "recentLocations": [
+    "D503",
+    "D206",
+    "D502",
+    "T202 E25"
+  ],
+  "recentCoursePaths": [
+    "20_University/2026-2/java기초/java기초.md",
+    "20_University/2026-2/AI활용실습/AI활용실습.md",
+    "20_University/2026-2/데이터처리/데이터처리.md",
+    "20_University/2026-2/인공지능데이터베이스실습/인공지능데이터베이스실습.md",
+    "20_University/2026-2/웹개발 프로젝트/웹개발 프로젝트.md",
+    "20_University/2026-2/실용영어2/실용영어2.md",
+    "20_University/2026-2/채플2/채플2.md",
+    "20_University/2026-2/컴퓨터시스템구조/컴퓨터시스템구조.md"
+  ],
+  "lastSemester": "2026-2",
+  "supportUrl": "https://github.com/sponsors/zzeroneko"
+}
