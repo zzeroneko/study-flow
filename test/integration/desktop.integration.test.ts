@@ -43,7 +43,7 @@ async function previewRequest(request: Record<string, unknown>, retries = 15): P
   throw new Error("Obsidian for Cursor connection failed");
 }
 
-describe.sequential("univVault desktop CDP", () => {
+describe.sequential("StudyFlow desktop CDP", () => {
   const vault = getTempVault();
   registerCoreWorkflowTests(vault);
 
@@ -147,7 +147,7 @@ describe.sequential("univVault desktop CDP", () => {
     });
 
     expect(rendered.type).toBe("render");
-    expect(rendered.html).toContain("univVault");
+    expect(rendered.html).toContain("StudyFlow");
     expect(rendered.html).toContain("오늘 과제");
     expect(rendered.css?.length).toBeGreaterThan(1_000);
   });

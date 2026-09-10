@@ -426,6 +426,7 @@
   display: flex;
   align-items: center;
   gap: 9px;
+  min-width: 0;
   min-height: 52px;
   border: 1px solid var(--background-modifier-border);
   border-radius: 10px;
@@ -447,6 +448,8 @@
 .sv-dashboard-action-text {
   display: grid;
   gap: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .sv-dashboard-action-text small,
@@ -551,6 +554,13 @@
   gap: 3px;
 }
 
+.sv-dashboard-timetable-course strong,
+.sv-dashboard-timetable-course span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
 .sv-dashboard-timetable-period {
   border-right: 1px solid var(--background-modifier-border);
 }
@@ -575,7 +585,9 @@
   color: var(--interactive-accent);
   font-size: 0.78rem;
   font-weight: 600;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: right;
 }
 
 .sv-dashboard-task-body {

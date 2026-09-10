@@ -29,9 +29,9 @@ export function migrateHomeContent(content: string): string {
     preserved.push(line);
   }
 
-  const normalized = preserved.join("\n").replace(/^#\s+StudyVault$/m, "# univVault").trimEnd();
+  const normalized = preserved.join("\n").replace(/^#\s+(?:StudyVault|univVault)$/m, "# StudyFlow").trimEnd();
   const dashboard = "```univvault-dashboard\n```";
-  const titleMatch = normalized.match(/^#\s+univVault\s*$/m);
+  const titleMatch = normalized.match(/^#\s+StudyFlow\s*$/m);
 
   if (!titleMatch || titleMatch.index === undefined) {
     return `${HOME_TEMPLATE.trimEnd()}\n\n${normalized}\n`;

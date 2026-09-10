@@ -47,7 +47,7 @@ function createAction(
   const text = button.createSpan({ cls: "sv-dashboard-action-text" });
   text.createEl("strong", { text: label });
   button.addEventListener("click", () => {
-    void action().catch((error) => console.error("univVault dashboard action failed", error));
+    void action().catch((error) => console.error("StudyFlow dashboard action failed", error));
   });
 }
 
@@ -181,7 +181,7 @@ async function renderDashboard(
             row.classList.toggle("is-done", requested);
           } catch (error) {
             checkbox.checked = !requested;
-            console.error("univVault task toggle failed", error);
+            console.error("StudyFlow task toggle failed", error);
           } finally {
             checkbox.disabled = false;
           }

@@ -6,7 +6,7 @@ tags:
   - dashboard
 ---
 
-# univVault
+# StudyFlow
 
 \`\`\`univvault-dashboard
 \`\`\`

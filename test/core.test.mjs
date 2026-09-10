@@ -112,7 +112,7 @@ test("Home migration is idempotent and preserves custom sections", () => {
 type: dashboard
 ---
 
-# univVault
+# StudyFlow
 
 ## 오늘 할 일
 

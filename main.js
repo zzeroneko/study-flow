@@ -233,7 +233,7 @@ var translations = {
     overlap: "\uAC19\uC740 \uC694\uC77C\uC758 \uAD50\uC2DC\uAC00 \uACB9\uCE69\uB2C8\uB2E4.",
     enterLocation: "\uC7A5\uC18C\uB97C \uC785\uB825\uD558\uC138\uC694.",
     offlineLocation: "\uC624\uD504\uB77C\uC778 \uC218\uC5C5\uC740 \uC7A5\uC18C\uAC00 \uD544\uC694\uD569\uB2C8\uB2E4.",
-    integrityTitle: "univVault \uB370\uC774\uD130 \uBB34\uACB0\uC131 \uAC80\uC0AC",
+    integrityTitle: "StudyFlow \uB370\uC774\uD130 \uBB34\uACB0\uC131 \uAC80\uC0AC",
     integrityScanning: "\uD30C\uC77C\uACFC \uC0DD\uC131\uB41C \uCC38\uC870\uB97C \uAC80\uC0AC\uD558\uB294 \uC911\uC785\uB2C8\uB2E4\u2026",
     integritySummary: "{files}\uAC1C \uD30C\uC77C \uAC80\uC0AC \xB7 {issues}\uAC1C \uC774\uC288",
     integrityNone: "\uBB38\uC81C\uAC00 \uBC1C\uACAC\uB418\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4.",
@@ -393,7 +393,7 @@ var translations = {
     overlap: "Periods overlap on the same day.",
     enterLocation: "Enter a location.",
     offlineLocation: "An in-person class needs a location.",
-    integrityTitle: "univVault data integrity check",
+    integrityTitle: "StudyFlow data integrity check",
     integrityScanning: "Checking files and generated references\u2026",
     integritySummary: "Checked {files} files \xB7 {issues} issues",
     integrityNone: "No problems found.",
@@ -775,7 +775,7 @@ tags:
   - dashboard
 ---
 
-# univVault
+# StudyFlow
 
 \`\`\`univvault-dashboard
 \`\`\`
@@ -2313,9 +2313,9 @@ function migrateHomeContent(content) {
     if (/^>\s*명령 팔레트\s*\/\s*리본:/.test(line)) continue;
     preserved.push(line);
   }
-  const normalized = preserved.join("\n").replace(/^#\s+StudyVault$/m, "# univVault").trimEnd();
+  const normalized = preserved.join("\n").replace(/^#\s+(?:StudyVault|univVault)$/m, "# StudyFlow").trimEnd();
   const dashboard = "```univvault-dashboard\n```";
-  const titleMatch = normalized.match(/^#\s+univVault\s*$/m);
+  const titleMatch = normalized.match(/^#\s+StudyFlow\s*$/m);
   if (!titleMatch || titleMatch.index === void 0) {
     return `${HOME_TEMPLATE.trimEnd()}
 
@@ -2597,7 +2597,7 @@ function createAction(container, label, icon, action, primary = false) {
   const text = button.createSpan({ cls: "sv-dashboard-action-text" });
   text.createEl("strong", { text: label });
   button.addEventListener("click", () => {
-    void action().catch((error) => console.error("univVault dashboard action failed", error));
+    void action().catch((error) => console.error("StudyFlow dashboard action failed", error));
   });
 }
 function createSection(container, title) {
@@ -2717,7 +2717,7 @@ async function renderDashboard(app, el, actions) {
           row.classList.toggle("is-done", requested);
         } catch (error) {
           checkbox.checked = !requested;
-          console.error("univVault task toggle failed", error);
+          console.error("StudyFlow task toggle failed", error);
         } finally {
           checkbox.disabled = false;
         }
@@ -2900,10 +2900,10 @@ var UnivVaultPlugin = class extends import_obsidian10.Plugin {
       addCourse: () => createCourseCommand(this.app, this)
     });
     this.addSettingTab(new UnivVaultSettingTab(this.app, this));
-    this.addRibbonIcon("univvault-book", `univVault: ${t("lecture")}`, async () => {
+    this.addRibbonIcon("univvault-book", `StudyFlow: ${t("lecture")}`, async () => {
       await createLectureCommand(this.app, this);
     });
-    this.addRibbonIcon("univvault-book", `univVault: ${t("addCourse")}`, async () => {
+    this.addRibbonIcon("univvault-book", `StudyFlow: ${t("addCourse")}`, async () => {
       await createCourseCommand(this.app, this);
     });
     this.addCommand({

@@ -128,10 +128,10 @@ export default class UnivVaultPlugin extends Plugin implements UnivVaultStore {
     });
     this.addSettingTab(new UnivVaultSettingTab(this.app, this));
 
-    this.addRibbonIcon("univvault-book", `univVault: ${t("lecture")}`, async () => {
+    this.addRibbonIcon("univvault-book", `StudyFlow: ${t("lecture")}`, async () => {
       await createLectureCommand(this.app, this);
     });
-    this.addRibbonIcon("univvault-book", `univVault: ${t("addCourse")}`, async () => {
+    this.addRibbonIcon("univvault-book", `StudyFlow: ${t("addCourse")}`, async () => {
       await createCourseCommand(this.app, this);
     });
 

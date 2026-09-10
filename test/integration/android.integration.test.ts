@@ -7,7 +7,7 @@ type AppInternal = {
   commands: { executeCommandById(id: string): Promise<boolean> };
 };
 
-describe.sequential("univVault Android Appium", () => {
+describe.sequential("StudyFlow Android Appium", () => {
   const vault = getTempVault();
   registerCoreWorkflowTests(vault);
 
